@@ -1,38 +1,142 @@
-.App {
-  text-align: center;
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: sans-serif;
+  /*mudar depois a font, sem isso parecia estar mais bonita */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background-size: cover;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+         /************ HEAD NAV BAR ***********/
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: initial;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+  background-color: #282c34;
+  color: white;
+  text-align: center;
+  width: 100%;
+  height: 70px;
+}
+
+h1 {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px;
+}
+
+
+nav ul {
+  display: inline-flex;
+  list-style: none;
+}
+
+nav ul li {
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+
+nav ul li a {
+  text-decoration: none;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+     /***************** CATEGORY ****************/
+.sub-categorias-1 {
+  display: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul li:hover .sub-categorias-1 {
+  display: block;
+  position: absolute;
+  background-color: #282c3499;
+  margin-top: 15px;
+  border-radius: 10px;
+  /* margin-left: -380px; */
+}
+
+nav ul li:hover .sub-categorias-1 ul{
+  display: block;
+}
+
+nav ul li:hover .sub-categorias-1 ul li {
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.8s;
+}
+
+nav ul li:hover .sub-categorias-1 ul li:hover{
+  background-color: #282c34;
+}
+
+/**************** MENU *****************/
+.sub-menu-1{
+  display: none;
+}
+
+nav ul li:hover .sub-menu-1 {
+  display: block;
+  position: absolute;
+  background-color: #282c3499;
+  margin-top: 15px;
+  /* margin-left: -10px; */
+  border-radius: 10px;
+}
+
+nav ul li:hover .sub-menu-1 ul{
+  display: block;
+}
+
+nav ul li:hover .sub-menu-1 ul li {
+  width: 150px;
+  text-align: center;
+  border-radius: 10px;
+  transition: 0.8s;
+}
+
+nav ul li:hover .sub-menu-1 ul li:hover{
+  background-color: #282c34;
+}
+
+/*************** ANIME **************/
+.sub-anime {
+display: none;
+}
+
+.anime:hover .sub-anime{
+  display: block;
+  position: absolute;
+  margin-top: -50px;
+  margin-left: 140px;
+}
+
+nav ul li:hover .sub-anime {
+display: block;
+position: absolute;
+background-color: #282c3499;
+margin-left: 150px;
+border-radius: 10px;
+font-size: 12px;
+}
+
+nav ul li:hover .sub-anime ul{
+display: block;
+}
+
+nav ul li:hover .sub-anime ul li{
+width: 150px;
+text-align: center;
+border-radius: 10px;
+transition: 0.8s;
+}
+
+nav ul li:hover .sub-anime ul li:hover{
+background-color: #282c34;
 }
