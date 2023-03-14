@@ -46,7 +46,7 @@ update: async (req, res) => {
 
   try {
     await Movies.update(movies, {where: {id}})
-    res.status(201).json({msg: 'Produto alterado com sucesso'})
+    res.status(201).json({msg: 'Filme alterado com sucesso'})
   } catch (err) {
     res.status(500).json({error: [...err]})
   }

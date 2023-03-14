@@ -1,8 +1,8 @@
 const { sequelise, DataTypes } = require('sequelize')
 
 module.exports = (sequelize, DataTypes) => {
-  const Genre = sequelize.define(
-    'Genre',
+  const Genres = sequelize.define(
+    'Genres',
     {
       id: {
         type: DataTypes.INTEGER,
@@ -10,17 +10,17 @@ module.exports = (sequelize, DataTypes) => {
         autoIncrement: true,
         allowNull: false
       },
-      created_at: {
-        type: DataTypes.STRING,
-        allowNull: false,
-      },
-      updated_at: {
-        type: DataTypes.STRING,
-        timestamp: null
-      },
+      // created_at: {
+      //   type: DataTypes.STRING,
+      //   allowNull: false,
+      // },
+      // updated_at: {
+      //   type: DataTypes.STRING,
+      //   timestamp: null
+      // },
       name: {
         type: DataTypes.STRING,
-        allowNull: true
+        allowNull: false
       },
       ranking: {
         type: DataTypes.INTEGER,
@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       active: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: true
       }
     },
     {
@@ -39,11 +39,11 @@ module.exports = (sequelize, DataTypes) => {
 
 
     )
-    Genre.associate = (models) => {
-      Genre.hasMany(models.Movies,{
-        as: 'movies',
-        foreignKey: 'genre_id'
-      })
-    }
-  return Genre
+    // Genre.associate = (models) => {
+    //   Genre.hasMany(models.Movies,{
+    //     as: 'movies',
+    //     foreignKey: 'genre_id'
+    //   })
+    // }
+  return Genres
 }
