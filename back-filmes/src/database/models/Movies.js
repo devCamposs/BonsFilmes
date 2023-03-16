@@ -26,13 +26,13 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATEONLY,
         allowNull: false
       },
-      length:{
-        type:  DataTypes.INTEGER,
+      length: {
+        type: DataTypes.INTEGER,
         allowNull: false
       },
-      genre_id:{
-       type: DataTypes.INTEGER,
-       allowNull: false
+      genre_id: {
+        type: DataTypes.INTEGER,
+        allowNull: false
       }
     },
     {
@@ -40,21 +40,19 @@ module.exports = (sequelize, DataTypes) => {
       tableName: 'movies',
       underscored: true,
     },
-
-    // Movies.associete = (models) =>{
-    //   Movies.belongsTo(models.Genre,{ // um filme pertence a um genero
-    //     as: 'genre',
-    //     foreignKey: 'genre_id'
-    //   })
-    //   Movies.belongsToMany(models.Actor,{
-    //     as: 'actors',
-    //     through: 'actor_movie',
-    //     foreignKey: 'movie_id',
-    //     otherKey: 'actor_id',
-    //     timestamps: false
-    //   })
-    // }
-
   )
+  Movies.associate = (models) => {
+    Movies.belongsTo(models.Genres, { // um filme pertence a um genero
+      as: 'genre',
+      foreignKey: 'genre_id'
+    })
+    // Movies.belongsToMany(models.Actor, {
+    //   as: 'actors',
+    //   through: 'actor_movie',
+    //   foreignKey: 'movie_id',
+    //   otherKey: 'actor_id',
+    //   timestamps: false
+    // })
+  }
   return Movies
 }

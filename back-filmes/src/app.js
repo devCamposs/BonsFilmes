@@ -5,6 +5,7 @@ const app = express()
 const moviesRouter = require('./routes/moviesRouter')
 const genresRouter = require('./routes/genresRouter')
 const actorRouter = require('./routes/actorRouter')
+const usuarioRouter = require('./routes/usuarioRouter')
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -12,6 +13,7 @@ app.use(express.json());
 app.use('/movies', moviesRouter)
 app.use('/genres', genresRouter)
 app.use('/actors', actorRouter)
+app.use('/usuario', usuarioRouter)
 
 
 app.use(function(err, req, res, next) {
